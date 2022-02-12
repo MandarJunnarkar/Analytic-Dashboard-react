@@ -1,0 +1,50 @@
+{
+  "Management": [
+    {
+      "id": 0,
+      "listName": "Customer",
+      "icon": "person",
+      "sublist": ["List Customer", "View Customer", "Edit Customer"],
+      "isExpand": false
+    },
+    {
+      "id": 1,
+      "listName": "Products",
+      "icon": "cart",
+      "sublist": ["Product 1"],
+      "isExpand": false
+    },
+    {
+      "id": 2,
+      "listName": "Orders",
+      "icon": "pie-chart",
+      "sublist": ["Order 1"],
+      "isExpand": false
+    },
+    {
+      "id": 3,
+      "listName": "Invoices",
+      "icon": "bar-chart",
+      "sublist": ["Invoice 1"],
+      "isExpand": false
+    }
+  ],
+
+  "Applications": [
+    {
+      "id": 0,
+      "title": "Applications",
+      "sublist": [
+        {
+          "icon": "bag",
+          "title": "Projects Platform"
+        },
+        {
+          "icon": "share",
+          "title": "Social Platform"
+        }
+      ],
+      "isExpand":false
+    }
+  ]
+}
