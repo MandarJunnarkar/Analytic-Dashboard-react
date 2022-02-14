@@ -17,7 +17,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-56 h-max min-h-screen bg-white pb-3">
+    <div className="w-56 h-max min-h-screen bg-white pb-3 hidden md:block">
       <div className="flex flex-col items-center border-b pb-3 border-black">
         <div className="bg-gray-300 rounded-full h-12 w-12 flex flex-col justify-center mx-auto mt-3 text-white text-2xl">
           <i className="bi bi-person-fill self-center"></i>

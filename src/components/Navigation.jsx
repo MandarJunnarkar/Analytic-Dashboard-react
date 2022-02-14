@@ -7,7 +7,7 @@ const Navigation = () => {
             <span className='text-indigo-600 text-2xl flex'><i className="bi bi-caret-right mx-auto my-auto"></i></span>
         </div>
         <nav className='mr-5'>
-            <ul className='flex gap-5 list-none'>
+            <ul className='gap-5 list-none hidden md:flex'>
                 <li className='text-white'><a><i className='bi bi-search'></i></a></li>
                 <li className='text-white'><a><i className='bi bi-people'></i></a></li>
                 <li className='text-white'><a><i className='bi bi-bell'></i></a></li>
