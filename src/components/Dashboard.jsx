@@ -18,7 +18,7 @@ const Dashboard = () => {
         <SystemHealth />
         <ReturnOnInvestment />
       </div>
-      <div className="flex w-full gap-5 my-5">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-5 my-5">
         <ActiveUsers />
         <Performance />
       </div>
