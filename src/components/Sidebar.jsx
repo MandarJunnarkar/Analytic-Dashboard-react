@@ -51,47 +51,54 @@ const Sidebar = () => {
             return (
               <li
                 key={data.id}
-                onClick={() => handleManagementExpand(data.id, data.isManagementExpand)}
+                onClick={() =>
+                  handleManagementExpand(data.id, data.isManagementExpand)
+                }
                 className="flex flex-col gap-4 hover:cursor-pointer"
               >
-                <p>
-                  <span>
-                    <i className={`bi bi-${data.icon}`}></i>
-                  </span>{" "}
-                  {data.listName}
-                </p>
-                {data.isManagementExpand &&
-                  data.sublist.map((item, index) => {
-                    return (
-                      <div className="ml-3" key={index}>
-                        {item}
-                      </div>
-                    );
-                  })}
+                  <p>
+                    <span>
+                      <i className={`bi bi-${data.icon}`}></i>
+                    </span>{" "}
+                    {data.listName}
+                  </p>
+                  {data.isManagementExpand &&
+                    data.sublist.map((item, index) => {
+                      return (
+                        <div onClick={(e) => e.stopPropagation()} className="ml-3" key={index}>
+                          {item}
+                        </div>
+                      );
+                    })}
               </li>
             );
           })}
         </ul>
-        <ul className="flex flex-col gap-4">
-          {appListData.map((items) => {
+        <h1>Application</h1>
+        <ul className="ml-3 flex flex-col gap-4">
+          {appListData.map((data) => {
             return (
               <li
-              className="hover: cursor-pointer flex flex-col gap-4"
-                onClick={() => handleAppListExpand(items.id, items.isApplicationExpand)}
-                key={items.id}
+                key={data.id}
+                onClick={() =>
+                  handleAppListExpand(data.id, data.isApplicationExpand)
+                }
+                className="flex flex-col gap-4 hover:cursor-pointer"
               >
-                {items.title}
-                {items.isApplicationExpand &&
-                  items.sublist.map((item, index) => {
-                    return (
-                      <p key={index} className="ml-3">
-                        <span>
-                          <i className={`bi bi-${item.icon}`}></i>
-                        </span>{" "}
-                        {item.title}
-                      </p>
-                    );
-                  })}
+                  <p>
+                    <span>
+                      <i className={`bi bi-${data.icon}`}></i>
+                    </span>{" "}
+                    {data.listName}
+                  </p>
+                  {data.isApplicationExpand &&
+                    data.sublist.map((item, index) => {
+                      return (
+                        <div onClick={(e) => e.stopPropagation()} className="ml-3" key={index}>
+                          {item}
+                        </div>
+                      );
+                    })}
               </li>
             );
           })}

@@ -1,50 +1,57 @@
 {
+  "Reports": [
+    {
+      "id": 0,
+      "listName": "Dashboard",
+      "icon": "pie-chart",
+      "sublist": []
+    },
+    {
+      "id": 1,
+      "listName": "Dashboard Alternative",
+      "icon": "bar-chart",
+      "sublist": []
+    }
+  ],
   "Management": [
     {
       "id": 0,
       "listName": "Customer",
       "icon": "person",
-      "sublist": ["List Customer", "View Customer", "Edit Customer"],
-      "isExpand": false
+      "sublist": ["List Customer", "View Customer", "Edit Customer"]
     },
     {
       "id": 1,
       "listName": "Products",
       "icon": "cart",
-      "sublist": ["Product 1"],
-      "isExpand": false
+      "sublist": ["Product 1"]
     },
     {
       "id": 2,
       "listName": "Orders",
       "icon": "pie-chart",
-      "sublist": ["Order 1"],
-      "isExpand": false
+      "sublist": ["Order 1"]
     },
     {
       "id": 3,
       "listName": "Invoices",
       "icon": "bar-chart",
-      "sublist": ["Invoice 1"],
-      "isExpand": false
+      "sublist": ["Invoice 1"]
     }
   ],
 
   "Applications": [
     {
-      "id": 0,
-      "title": "Applications",
-      "sublist": [
-        {
-          "icon": "bag",
-          "title": "Projects Platform"
-        },
-        {
-          "icon": "share",
-          "title": "Social Platform"
-        }
-      ],
-      "isExpand":false
+      "id":0,
+      "icon": "bag",
+      "listName": "Projects Platform",
+      "sublist": []
+    },
+    {
+      "id":1,
+      "icon": "share",
+      "listName": "Social Platform",
+      "sublist": []
     }
   ]
 }
