@@ -2,19 +2,14 @@ import React, { useState } from "react";
 import MenuData from "../sidebarMenu.json";
 
 const Sidebar = () => {
-  const [managementData, setManagementData] = useState(MenuData.Management);
-  const [appListData, setAppListData] = useState(MenuData.Applications);
+  const [menuData, setMenuData] = useState(MenuData);
 
-  const handleManagementExpand = (id, isManagementExpand) => {
-    const managementArrayData = [...managementData];
-    managementArrayData[id].isManagementExpand = !isManagementExpand;
-    setManagementData(managementArrayData);
+  const handleExpand = (id, isExpand, menuTitle) => {
+    const menuObjData = {...menuData};
+    menuObjData[menuTitle][id].isExpand = !isExpand;
+    setMenuData(menuObjData);
   };
-  const handleAppListExpand = (id, isApplicationExpand) => {
-    const applicationArrayData = [...appListData];
-    applicationArrayData[id].isApplicationExpand = !isApplicationExpand;
-    setAppListData(applicationArrayData);
-  };
+  
 
   return (
     <div className="w-56 h-max min-h-screen bg-white pb-3 hidden md:block">
@@ -26,83 +21,47 @@ const Sidebar = () => {
         <h1 className="text-xs text-indigo-600">your tier: premium</h1>
       </div>
       <nav className="ml-2 mt-3 flex flex-col gap-4">
-        <h1>Reports</h1>
-        <ul className="ml-3 gap-4 flex flex-col">
-          <li>
-            <a href="/">
-              <span>
-                <i className="bi bi-pie-chart"></i>
-              </span>{" "}
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <span>
-                <i className="bi bi-bar-chart"></i>
-              </span>{" "}
-              Dashboard Alternative
-            </a>
-          </li>
-        </ul>
-        <h1>Management</h1>
-        <ul className="ml-3 flex flex-col gap-4">
-          {managementData.map((data) => {
-            return (
-              <li
-                key={data.id}
-                onClick={() =>
-                  handleManagementExpand(data.id, data.isManagementExpand)
-                }
-                className="flex flex-col gap-4 hover:cursor-pointer"
-              >
-                  <p>
-                    <span>
-                      <i className={`bi bi-${data.icon}`}></i>
-                    </span>{" "}
-                    {data.listName}
-                  </p>
-                  {data.isManagementExpand &&
-                    data.sublist.map((item, index) => {
-                      return (
-                        <div onClick={(e) => e.stopPropagation()} className="ml-3" key={index}>
-                          {item}
-                        </div>
-                      );
-                    })}
-              </li>
-            );
-          })}
-        </ul>
-        <h1>Application</h1>
-        <ul className="ml-3 flex flex-col gap-4">
-          {appListData.map((data) => {
-            return (
-              <li
-                key={data.id}
-                onClick={() =>
-                  handleAppListExpand(data.id, data.isApplicationExpand)
-                }
-                className="flex flex-col gap-4 hover:cursor-pointer"
-              >
-                  <p>
-                    <span>
-                      <i className={`bi bi-${data.icon}`}></i>
-                    </span>{" "}
-                    {data.listName}
-                  </p>
-                  {data.isApplicationExpand &&
-                    data.sublist.map((item, index) => {
-                      return (
-                        <div onClick={(e) => e.stopPropagation()} className="ml-3" key={index}>
-                          {item}
-                        </div>
-                      );
-                    })}
-              </li>
-            );
-          })}
-        </ul>
+        {Object.keys(MenuData).map((menu) => {
+          return (
+            <div>
+              <h1>{menu}</h1>
+              <ul className="ml-3 mt-3 flex flex-col gap-4">
+                {MenuData[menu].map((data) => {
+                  return (
+                    <li
+                      key={data.id}
+                      onClick={() =>
+                        handleExpand(data.id, data.isExpand, menu)
+                      }
+                      className="flex flex-col gap-4 hover:cursor-pointer"
+                    >
+                      <p>
+                        <span>
+                          <i className={`bi bi-${data.icon}`}></i>
+                        </span>{" "}
+                        {data.listName}
+                      </p>
+                      {data.isExpand &&
+                        data.sublist.map((item, index) => {
+                          return (
+                            <div
+                              onClick={(e) => e.stopPropagation()}
+                              className="ml-3"
+                              key={index}
+                            >
+                              {item}
+                            </div>
+                          );
+                        })}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
+
+       
       </nav>
     </div>
   );

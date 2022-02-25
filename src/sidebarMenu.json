@@ -53,5 +53,20 @@
       "listName": "Social Platform",
       "sublist": []
     }
+  ],
+
+  "Application": [
+    {
+      "id":0,
+      "icon": "bag",
+      "listName": "Projects Platform",
+      "sublist": []
+    },
+    {
+      "id":1,
+      "icon": "share",
+      "listName": "Social Platform",
+      "sublist": []
+    }
   ]
 }
